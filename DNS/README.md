@@ -18,3 +18,4 @@ sudo apt install bind9 bind9utils bind9-doc -y
 sudo systemctl status bind9
 ```
 
+![](//status_dns.png/200x100)
