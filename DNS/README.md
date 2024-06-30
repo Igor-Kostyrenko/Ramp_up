@@ -18,7 +18,7 @@ sudo apt install bind9 bind9utils bind9-doc -y
 sudo systemctl status bind9
 ```
 
- <p align="left">
+<p align="left">
  <img width="600px" src="status_dns.png" alt="qr"/>
 </p>
 
@@ -104,6 +104,8 @@ search class.local
 ```sh
 dig 192.168.9.227
 ```
-
+<p align="left">
+ <img width="600px" src="dig_check1.png" alt="qr"/>
+</p>
 
 
