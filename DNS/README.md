@@ -148,7 +148,13 @@ search test.local
 dig 192.168.9.222
 ```
 <p align="left">
- <img width="600px" src="dig_check1.png" alt="qr"/>
+ <img width="600px" src="dig_check.png" alt="qr"/>
 </p>
 
-
+<p align="left">
+ <img width="600px" src="nslookup_check.png" alt="qr"/>
+</p>
+Check DNS from host 
+<p align="left">
+ <img width="600px" src="dns_host_check.png" alt="qr"/>
+</p>
