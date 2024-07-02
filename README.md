@@ -1,3 +1,16 @@
 # Ramp_up
 
 - [DNS](/DNS)
+- [Git](/Git)
+- [Ansible](/Ansible)
+- [Terraform](/Terraform)
+- [Jenkins](/Jenkins)
+- [BASH](/BASH)
+- [Docker](/Docker)
+- [Nagios](/Nagios)
+- [Datadog](/Datadog)
+- [Promehteus](/Prometheus)
+- [Grafana](/Grafana)
+- [Consul](/Consul)
+- [MySQL](/MySQL)
+- [Envoy](/Envoy)
