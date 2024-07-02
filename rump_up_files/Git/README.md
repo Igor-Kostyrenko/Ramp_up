@@ -1,3 +1,3 @@
 <p align="left">
- <img width="00px" src="Logo.png" alt="qr"/>
+ <img width="400px" src="Logo.png" alt="qr"/>
 </p>
