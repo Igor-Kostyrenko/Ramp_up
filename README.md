@@ -1,7 +1,7 @@
 # Ramp_up
 
 - [DNS](/rump_up_files/DNS)
-- [Git](//rump_up_filesGit)
+- [Git](//rump_up_files/Git)
 - [Ansible](/rump_up_files/Ansible)
 - [Terraform](/rump_up_files/Terraform)
 - [Jenkins](/rump_up_files/Jenkins)
