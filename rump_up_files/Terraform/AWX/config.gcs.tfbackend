@@ -1,0 +1,2 @@
+bucket = "terraform_backend_storage"
+prefix = "terraform/awx_state"
