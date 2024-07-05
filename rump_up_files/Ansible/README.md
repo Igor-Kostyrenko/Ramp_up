@@ -70,9 +70,9 @@ vm2.example.com ansible_user=your_user ansible_ssh_private_key_file=path_to_your
 ```
 
 <p align="left">
- <img width="200px" src="grafana.png" alt="qr"/>
+ <img width="400px" src="grafana.png" alt="qr"/>
 </p>
 
 <p align="left">
- <img width="200px" src="prometheus.png" alt="qr"/>
+ <img width="400px" src="prometheus.png" alt="qr"/>
 </p>
