@@ -67,7 +67,7 @@ vm1.example.com ansible_user=your_user ansible_ssh_private_key_file=path_to_your
 
 [vm2]
 vm2.example.com ansible_user=your_user ansible_ssh_private_key_file=path_to_your_private_key
-
+```
 
 <p align="left">
  <img width="200px" src="grafana.png" alt="qr"/>
