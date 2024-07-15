@@ -52,3 +52,7 @@ Create an admin user for accessing Jenkins and managing configurations.
 ## Step 3: Basic Configuration
 
 Install Additional Plugins (Optional): Go to Manage Jenkins > Manage Plugins and install additional plugins as needed (e.g., Git, Docker Pipeline).
+
+<p align="left">
+ <img width="500px" src="jenkins.png" alt="qr"/>
+</p>
