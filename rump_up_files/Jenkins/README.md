@@ -19,3 +19,17 @@
     sudo apt-get update
     sudo apt-get install jenkins
 ```
+After Installation of Jenkins, You can start the Jenkins service
+```sh
+    sudo systemctl start jenkins
+```
+Also enable the Jenkins service to start at boot
+```sh
+    sudo systemctl enable jenkins
+```
+Check the status of the Jenkins service
+```sh
+    sudo systemctl status jenkins
+```
+
+## Step 2: Access Jenkins Dashboard
