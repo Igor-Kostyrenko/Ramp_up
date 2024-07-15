@@ -40,13 +40,13 @@ Open your web browser and enter `http://localhost:8080` in the address bar. If J
 ### Unlock Jenkins
 When you first access a new Jenkins instance, you are asked to unlock it using an automatically-generated password. You’ll need to retrieve this password from the Jenkins server.
 <p align="left">
- <img width="500px" src="unlock.png" alt="qr"/>
+ <img width="400px" src="unlock.png" alt="qr"/>
 </p>
 
 ### Create Admin User
 Create an admin user for accessing Jenkins and managing configurations.
 <p align="left">
- <img width="500px" src="admin.png" alt="qr"/>
+ <img width="400px" src="admin.png" alt="qr"/>
 </p>
 
 ## Step 3: Basic Configuration
