@@ -33,3 +33,16 @@ Check the status of the Jenkins service
 ```
 
 ## Step 2: Access Jenkins Dashboard
+### Open Jenkins Dashboard: 
+Open your web browser and enter `http://localhost:8080` in the address bar. If Jenkins is running on a remote server, replace `localhost` with the server's IP address or hostname.
+### Unlock Jenkins
+When you first access a new Jenkins instance, you are asked to unlock it using an automatically-generated password. You’ll need to retrieve this password from the Jenkins server.
+<p align="left">
+ <img width="500px" src="unlock.png" alt="qr"/>
+</p>
+
+### Create Admin User
+Create an admin user for accessing Jenkins and managing configurations.
+<p align="left">
+ <img width="500px" src="admin.png" alt="qr"/>
+</p>
