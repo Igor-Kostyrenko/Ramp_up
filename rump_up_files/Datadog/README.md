@@ -38,3 +38,21 @@ The Nginx configuration file. It includes settings to enable the Nginx status pa
 2. **Update your `YOUR-HOST-IP` in `nginx_check.yml`**
 
 4. **Run all containers with `docker-compose up -d`**
+
+
+## Check Custom Check Status
+
+Run the following command to verify the custom check:
+
+```sh
+    docker exec -it datadog-agent agent check nginx_check
+```
+
+## View Agent Status
+
+Run the following command to view the Datadog Agent status:
+
+```sh
+   docker exec -it datadog-agent agent status
+```
+
