@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - mynetwork
+
+  datadog-agent:
+    image: gcr.io/datadoghq/agent:latest
+    container_name: datadog-agent
+    environment:
+      - DD_API_KEY=your_datadog_api_key
+      - DD_AGENT_MAJOR_VERSION=7
+      - DD_LOGS_ENABLED=true
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+      - DD_SITE=datadoghq.eu
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - ./custom_checks/nginx_check.py:/etc/datadog-agent/checks.d/nginx_check.py:ro
+      - ./custom_checks/nginx_check.yaml:/etc/datadog-agent/conf.d/nginx_check.d/nginx_check.yaml:ro
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
