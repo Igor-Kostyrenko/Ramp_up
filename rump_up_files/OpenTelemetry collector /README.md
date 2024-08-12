@@ -7,10 +7,10 @@
 
 
 <p align="left">
- <img width="600px" src="otel+datadog.png" alt="qr"/>
+ <img width="700px" src="otel+datadog.png" alt="qr"/>
 </p>
 
 
 <p align="left">
- <img width="600px" src="otel+datadog2.png" alt="qr"/>
+ <img width="700px" src="otel+datadog2.png" alt="qr"/>
 </p>
