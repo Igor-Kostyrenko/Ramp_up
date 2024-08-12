@@ -2,11 +2,10 @@
  <img width="400px" src="dd_logo.jpg" alt="qr"/>
 </p>
 
-![Alternate text](dd_logo.jpg){: style="width:40%"}
 
 # Nginx and Datadog Integration with Custom Agent Check
-
-
+[Source tutorial1](https://github.com/DataDog/docker-compose-example "GitHub_Datadog")
+[Source tutorial2](https://www.devopsschool.com/blog/how-to-install-configure-datadog-integration-with-apache-httpd/ "DevOpsScholl")
 
 This project sets up Nginx and Datadog Agent using Docker Compose and includes a custom Datadog Agent check to monitor the status of an Nginx server.
 
