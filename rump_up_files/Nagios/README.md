@@ -6,7 +6,7 @@
 
 ## Steps:
 
-## * Install nagios from [install script](nagiosinstall.sh)
+## 1. Install nagios from [install script](nagiosinstall.sh)
 
 ### default page of nagios
 <p align="left">
@@ -14,12 +14,12 @@
 </p>
 
 
-## * Install Nrpe server on client machine 
+## 2. Install Nrpe server on client machine 
 
 ```sh
     apt install nagios-nrpe-server nagios-plugins 
 ```
-## * Configure Nagios Client
+## 3. Configure Nagios Client
 
 ` vi /etc/nagios/nrpe.cfg  `
 
