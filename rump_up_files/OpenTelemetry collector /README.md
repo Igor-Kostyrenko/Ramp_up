@@ -10,7 +10,7 @@
 
 2. Configure the collector to export telemetry data to DataDog
    * [OpenTelemetry collector configuration file](config.yml)
-   `configure your the DataDog site URL and API key`
+   #### `configure your the DataDog site URL and API key`
 
 3. Run the collector
 ```sh
