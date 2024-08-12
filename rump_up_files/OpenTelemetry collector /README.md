@@ -8,16 +8,16 @@
 ## Setup and Configuration
 ### 1. [Download an OpenTelemetry collector](https://betterprogramming.pub/distributed-tracing-with-opentelemetry-and-datadog-712f8f4d520b )
 
-2. Configure the collector to export telemetry data to DataDog
+### 2. Configure the collector to export telemetry data to DataDog
    * [OpenTelemetry collector configuration file](config.yml)
    #### `configure your the DataDog site URL and API key`
 
-3. Run the collector
+### 3. Run the collector
 ```sh
     ./otelcol-contrib --config=config.yaml
 ```
 
-4. Observe your infrastructure metrics in DataDog
+### 4. Observe your infrastructure metrics in DataDog
 
 <p align="left">
  <img width="700px" src="otel+datadog.png" alt="qr"/>
@@ -27,7 +27,7 @@
  <img width="700px" src="otel+datadog2.png" alt="qr"/>
 </p>
 
-5. Simulate an application sending logs to the collector, observe the result in DataDog
+### 5. Simulate an application sending logs to the collector, observe the result in DataDog
    * Create a Bash script [testCollectorLogs.sh](testCollectorLogs.sh) 
    * Execute script and  see a similar result:
 
