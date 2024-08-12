@@ -6,7 +6,7 @@
 
 ## Steps:
 
-* Install nagios from [install script](nagiosinstall.sh)
+## * Install nagios from [install script](nagiosinstall.sh)
 
 ### default page of nagios
 <p align="left">
@@ -14,25 +14,25 @@
 </p>
 
 
-* Install Nrpe server on client machine 
+## * Install Nrpe server on client machine 
 
 ```sh
     apt install nagios-nrpe-server nagios-plugins 
 ```
-* Configure Nagios Client
+## * Configure Nagios Client
 
 ` vi /etc/nagios/nrpe.cfg  `
 
-On the “allowed_hosts” line, add theNagios Server IP addresses
+##### On the “allowed_hosts” line, add theNagios Server IP addresses
 
 ```sh
   allowed_hosts=127.0.0.1, 3.73.117.51 
 ```
-After that restart the nrpe client by following command
+##### After that restart the nrpe client by following command
 ```sh
   systemctl restart nagios-nrpe-server
 ```
-And restars nagios server
+##### And restars nagios server
 ```sh
   systemctl restart nagios
 ```
