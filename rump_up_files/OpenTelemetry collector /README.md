@@ -32,7 +32,7 @@
    * Execute script and  see a similar result:
 
 ```sh
-    $ ./testCollectorLogs.sh
+  $ ./testCollectorLogs.sh
 {"partialSuccess":{}}200
 ```
 #### The HTTP response 200 indicates that the collector has successfully processed your input log
