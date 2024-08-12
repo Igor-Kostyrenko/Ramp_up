@@ -24,7 +24,7 @@
 ### Processes
 
 <p align="left">
- <img width="600px" src="processec.png" alt="qr"/>
+ <img width="600px" src="processes.png" alt="qr"/>
 </p>
 
 ### Log source
