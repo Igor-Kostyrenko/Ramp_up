@@ -6,7 +6,7 @@
 - [Source tutorial](https://medium.com/@gerardyin/setting-up-an-opentelemetry-collector-that-exports-to-datadog-cb5d5dceadb7 "DevOpsScholl")
 
 ## Setup and Configuration
-1. [Download an OpenTelemetry collector](https://betterprogramming.pub/distributed-tracing-with-opentelemetry-and-datadog-712f8f4d520b )
+### 1. [Download an OpenTelemetry collector](https://betterprogramming.pub/distributed-tracing-with-opentelemetry-and-datadog-712f8f4d520b )
 
 2. Configure the collector to export telemetry data to DataDog
    * [OpenTelemetry collector configuration file](config.yml)
