@@ -23,6 +23,10 @@
  <img width="700px" src="otel+datadog.png" alt="qr"/>
 </p>
 
+<p align="left">
+ <img width="700px" src="otel+datadog2.png" alt="qr"/>
+</p>
+
 5. Simulate an application sending logs to the collector, observe the result in DataDog
    * Create a Bash script [testCollectorLogs.sh](testCollectorLogs.sh) 
    * Execute script and  see a similar result:
@@ -34,7 +38,7 @@
 The HTTP response 200 indicates that the collector has successfully processed your input log
 
 <p align="left">
- <img width="700px" src="otel+datadog2.png" alt="qr"/>
+ <img width="700px" src="otel_logs.png" alt="qr"/>
 </p>
 
 
