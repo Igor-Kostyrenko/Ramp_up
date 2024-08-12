@@ -35,7 +35,7 @@
     $ ./testCollectorLogs.sh
 {"partialSuccess":{}}200
 ```
-The HTTP response 200 indicates that the collector has successfully processed your input log
+#### The HTTP response 200 indicates that the collector has successfully processed your input log
 
 <p align="left">
  <img width="700px" src="otel_logs.png" alt="qr"/>
