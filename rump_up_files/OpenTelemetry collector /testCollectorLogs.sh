@@ -1,3 +1,4 @@
+curl -X POST -w "%{http_code}" http://localhost:4318/v1/logs -H 'Content-Type: application/json' -d '
 {
   "resourceLogs": [
     {
