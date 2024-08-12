@@ -19,7 +19,15 @@
 ```sh
     apt install nagios-nrpe-server nagios-plugins 
 ```
+* Configure Nagios Client
 
+` vi /etc/nagios/nrpe.cfg  `
+
+On the “allowed_hosts” line, add theNagios Server IP addresses
+
+```sh
+    allowed_hosts=127.0.0.1, 3.73.117.51 
+```
 
 <p align="left">
  <img width="800px" src="nagios.png" alt="qr"/>
