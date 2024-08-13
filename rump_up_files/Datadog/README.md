@@ -62,11 +62,11 @@ Run the following command to view the Datadog Agent status:
 ### Add hosts
 
 <p align="left">
- <img width="800px" src="/files/hosts.png" alt="qr"/>
+ <img width="800px" src="/rump_up_files/Datadog/files/hosts.png" alt="qr"/>
 </p>
 
 <p align="left">
- <img width="800px" src="host_metrics.png" alt="qr"/>
+ <img width="800px" src="/files/host_metrics.png" alt="qr"/>
 </p>
 
 
