@@ -9,7 +9,7 @@
 - [Docker](/rump_up_files/Docker)
 - [Nagios](/rump_up_files/Nagios)
 - [Datadog](/rump_up_files/Datadog)
-- [OpenTelemetry](/rump_up_files/OpenTelemetry collector )
+- [OpenTelemetry](/rump_up_files/OpenTelemetry_collector)
 - [Promehteus](/rump_up_files/Prometheus)
 - [Grafana](/rump_up_files/Grafana)
 - [Consul](/rump_up_files/Consul)
