@@ -65,3 +65,46 @@
 - socket_address:
   - address: `0.0.0.0` means Envoy will listen on all available network interfaces.
   - port_value: `10000` is the port number on which Envoy listens for incoming traffic.
+
+## [**Filter Chains**]() 
+#### A filter chain processes incoming connections.
+
+- filters: List of filters to apply to the connections.
+- name: Specifies the filter `(envoy.filters.network.http_connection_manager)`.
+- typed_config: Configuration for the HTTP connection manager.
+- @type: Type the URL for the HTTP connection manager configuration.
+- stat_prefix: Prefix for statistics related to this HTTP connection manager `(ingress_http)`.
+- codec_type: Codec type for handling HTTP connections (`AUTO` allows Envoy to choose the appropriate codec).
+  - AUTO: Envoy will automatically determine the appropriate codec type to use.
+  - HTTP1: Envoy will use the HTTP/1.1 codec.
+  - HTTP2: Envoy will use the HTTP/2 codec.
+  - HTTP3: Envoy will use the HTTP/3 codec (if available and supported).
+- route_config: Configuration for routing incoming HTTP requests.
+- name: Identifier for the route `(local_route)`.
+- virtual_hosts: Virtual hosts configuration.
+- name: Identifier for the virtual host `(local_service)`.
+- domains: List of domains this virtual host handles `(* matches all domains)`.
+- routes: List of routing rules.
+- match: Condition to match incoming requests.
+- route: Action to take for matched requests.
+- cluster: Specifies the upstream cluster to route to `(service_behind_envoy)`.
+- http_filters: List of HTTP filters.
+- name: Specifies the HTTP router filter `(envoy.filters.http.router)`, which performs the routing.
+
+## [**Clusters**]() 
+#### A cluster defines an upstream service that Envoy can route to.
+
+- name: Identifier for the cluster `(service_behind_envoy)`.
+- connect_timeout: Timeout for connecting to the upstream service `(0.25s)`.
+- type: Cluster discovery type (`STRICT_DNS` means the cluster resolves via DNS).
+- lb_policy: Load balancing policy (`ROUND_ROBIN` distributes requests evenly across endpoints).
+- dns_lookup_family: DNS lookup family (`V4_ONLY` restricts DNS lookups to IPv4 addresses).
+- load_assignment: Static assignment of endpoints to the cluster.
+- cluster_name: Identifier for the cluster (`service_behind_envoy`).
+- endpoints: List of endpoints for the cluster.
+- lb_endpoints: Load balancing endpoints.
+- endpoint: Individual endpoint details.
+- address: Network address of the endpoint.
+- socket_address:
+- address: Hostname or IP address of the endpoint (`nodeapp`).
+- port_value: Port number of the endpoint (`8080`).
