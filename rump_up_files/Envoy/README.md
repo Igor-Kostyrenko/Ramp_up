@@ -53,3 +53,15 @@
                       address: nodeapp  # Hostname or IP address of the endpoint, this is pointing to a docker service
                       port_value: 8080  # Port number of the endpointStatic Resources
 ```
+
+`static_resources`
+#### It is a section where listeners and clusters are defined.
+
+### **Listeners** 
+#### A listener specifies where the Envoy should listen for incoming connections.
+
+- name: Identifier for the listener (listener_0).
+- address: Network address where the listener should bind.
+- socket_address:
+  - address: `0.0.0.0` means Envoy will listen on all available network interfaces.
+  - port_value: `10000` is the port number on which Envoy listens for incoming traffic.
