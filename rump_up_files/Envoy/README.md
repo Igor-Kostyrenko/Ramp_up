@@ -110,6 +110,9 @@
 - port_value: Port number of the endpoint (`8080`).
 
 
-### How to run the project
+### How to run the project `docker-compose up`
 
-### docker-compose up
+### Answer from Envoy proxy
+<p align="left">
+ <img width="600px" src="envoy_answer.png" alt="qr"/>
+</p>
