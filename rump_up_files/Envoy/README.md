@@ -57,7 +57,7 @@
 `static_resources`
 #### It is a section where listeners and clusters are defined.
 
-### **Listeners** 
+## [**Listeners**]() 
 #### A listener specifies where the Envoy should listen for incoming connections.
 
 - name: Identifier for the listener (listener_0).
