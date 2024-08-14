@@ -108,3 +108,8 @@
 - socket_address:
 - address: Hostname or IP address of the endpoint (`nodeapp`).
 - port_value: Port number of the endpoint (`8080`).
+
+
+### How to run the project
+
+### docker-compose up
