@@ -35,14 +35,14 @@ CMD ["svscan", "/etc/service"]
 ```
 
 1. Starting Services with `svscan`
-#### `svscan` is the command that monitors a directory of services and starts each service that it finds.
+### `svscan` is the command that monitors a directory of services and starts each service that it finds.
 ```sh
     sudo svscan /etc/service
 ```
 
 2. Checking the Status of a Service with `svstat`
-#### `svstat` provides the status of a service managed by supervise.
+### `svstat` provides the status of a service managed by supervise.
 ```sh
     sudo svstat /etc/service/nginx
 ```
-- This command checks the status of the nginx service. It will display information such as whether the service is up or down, its process ID (PID), and how long it has been running.
+#### - This command checks the status of the nginx service. It will display information such as whether the service is up or down, its process ID (PID), and how long it has been running.
