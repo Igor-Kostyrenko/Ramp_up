@@ -94,7 +94,7 @@ bash
 
 
 ## [Summary]()
-#### **Using daemontools, you can effectively manage services like nginx by starting, stopping, restarting them, and checking their status. Additionally, multilog can be used to manage and rotate logs, ensuring that log files are properly handled without manual intervention. This suite of tools is powerful for maintaining reliable service operation, especially in environments where uptime and automated recovery are critical.**
+#### *Using daemontools, you can effectively manage services like nginx by starting, stopping, restarting them, and checking their status. Additionally, multilog can be used to manage and rotate logs, ensuring that log files are properly handled without manual intervention. This suite of tools is powerful for maintaining reliable service operation, especially in environments where uptime and automated recovery are critical.*
 
 <p align="left">
  <img width="800px" src="img/daemontools.png" alt="qr"/>
