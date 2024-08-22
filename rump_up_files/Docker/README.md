@@ -34,14 +34,14 @@ RUN echo '#!/bin/sh' > /etc/service/nginx/log/run && \
 CMD ["svscan", "/etc/service"]
 ```
 
-1. Starting Services with `svscan`
-### `svscan` is the command that monitors a directory of services and starts each service that it finds.
+## 1. Starting Services with `svscan`
+#### `svscan` is the command that monitors a directory of services and starts each service that it finds.
 ```sh
     sudo svscan /etc/service
 ```
 
-2. Checking the Status of a Service with `svstat`
-### `svstat` provides the status of a service managed by supervise.
+## 2. Checking the Status of a Service with `svstat`
+#### `svstat` provides the status of a service managed by supervise.
 ```sh
     sudo svstat /etc/service/nginx
 ```
