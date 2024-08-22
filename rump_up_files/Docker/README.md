@@ -1,3 +1,8 @@
+<p align="left">
+ <img width="600px" src="/img/docker-logo.png" alt="qr"/>
+</p>
+
+
 ### This [Dockerfile](./Dockerfile) will set up an nginx service managed by daemontools with logging handled by multilog, all within a Debian 11-based container.
 
 ```sh
