@@ -93,5 +93,5 @@ bash
   - Simply ensure that your nginx service is being managed by `svscan` (as configured in your Dockerfile), and it will be restarted automatically if it stops unexpectedly.
 
 
-## Summary
-### Using daemontools, you can effectively manage services like nginx by starting, stopping, restarting them, and checking their status. Additionally, multilog can be used to manage and rotate logs, ensuring that log files are properly handled without manual intervention. This suite of tools is powerful for maintaining reliable service operation, especially in environments where uptime and automated recovery are critical.
+## [Summary]()
+#### Using daemontools, you can effectively manage services like nginx by starting, stopping, restarting them, and checking their status. Additionally, multilog can be used to manage and rotate logs, ensuring that log files are properly handled without manual intervention. This suite of tools is powerful for maintaining reliable service operation, especially in environments where uptime and automated recovery are critical.
