@@ -1,5 +1,5 @@
 <p align="left">
- <img width="600px" src="/img/docker-logo.png" alt="qr"/>
+ <img width="600px" src="img/docker-logo.png" alt="qr"/>
 </p>
 
 
