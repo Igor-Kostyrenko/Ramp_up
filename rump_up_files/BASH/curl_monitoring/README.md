@@ -107,3 +107,14 @@ while true; do
 done
 
 ```
+<p align="left">
+ <img width="800px" src="/rump_up_files/BASH/curl_monitoring/curl1.png" alt="qr"/>
+</p>
+
+<p align="left">
+ <img width="800px" src="/rump_up_files/BASH/curl_monitoring/curl2.png" alt="qr"/>
+</p>
+
+<p align="left">
+ <img width="800px" src="/rump_up_files/BASH/curl_monitoring/curl3..png" alt="qr"/>
+</p>
