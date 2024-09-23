@@ -116,5 +116,5 @@ done
 </p>
 
 <p align="left">
- <img width="800px" src="/rump_up_files/BASH/curl_monitoring/curl3..png" alt="qr"/>
+ <img width="800px" src="/rump_up_files/BASH/curl_monitoring/curl3.png" alt="qr"/>
 </p>
