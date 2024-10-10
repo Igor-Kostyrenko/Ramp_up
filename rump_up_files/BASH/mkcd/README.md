@@ -27,3 +27,5 @@ function mkcd {
 . ~/.bashrc
 
 ```
+
+![test](image.png)
