@@ -1,9 +1,9 @@
-function that creates a directory and move into it with one command
+### Function that creates a directory and move into it with one command
 
 ### Use any editor you want to add the mkcd function to the bottom of the bashrc file.
 
 ```sh
-    # edit the bashrc file
+# edit the bashrc file
 vim ~/.bashrc
 
 # add the mkcd function to the bottom of the file
@@ -18,4 +18,12 @@ function mkcd {
 }
 
 # save the file and exit
+```
+
+### Reload the bashrc settings by executing the following command:
+
+```sh
+
+. ~/.bashrc
+
 ```
