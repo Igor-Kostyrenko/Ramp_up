@@ -35,4 +35,4 @@ cd /var/www/html
 sudo rm index.html
 sudo nano index.php
 ```
-- ####  A file Editor will be opened & paste the “PHP Website Code” from file 
+- ####  A file Editor will be opened & paste the “PHP Website Code” from file `index.php`
