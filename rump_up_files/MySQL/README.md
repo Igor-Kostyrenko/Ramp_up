@@ -84,38 +84,139 @@ sudo apt install apache2 -y
 ```
 <img width="1022" alt="Screenshot 2024-10-19 at 18 35 30" src="https://github.com/user-attachments/assets/db54f9cb-803e-4298-9345-11aa03a00699">
 
+## Configure the Correct Database Settings in PHP file & Insert Dependencies to Remove the Error from PHP Web Page
+
+- #### Open the “index.php” file using the below-given command:
+```mysql
+  sudo nano index.php
+```
+- #### right database connection:
+
+servername = “Real Database Endpoint" (example  - application-database.calupg2c7sxe.ap-south-1.rds.amazonaws.com)
+
+- #### Install the PHP MySQL Database Dependencies to Remove the Error from WebPage
+```mysql
+  sudo add-apt-repository -y ppa:ondrej/php
+```
+- #### Install the mysql-client over the “EC2 Machine [AWS_EC2_PHP_Project]” using the below-given command:
+```mysql
+  sudo apt install php5.6 mysql-client php5.6-mysqli
+```
+##### The PHP & MySQL dependencies will be successfully installed
+
+- #### Open the web page by typing the public IP address
+
+<img width="1763" alt="Screenshot 2024-10-19 at 19 12 14" src="https://github.com/user-attachments/assets/e2222087-09d7-4d47-a5e5-cdb4a91c8b5e">
+
+##### No Database Dependencies Show Here & Error Resolved
+
+- #### Test the Database Connection with PHP Web Page Again
+ Insert the “Name” and “Email” through the web page. Click on the “Submit” button.
+
+<img width="1632" alt="Screenshot 2024-10-19 at 19 20 40" src="https://github.com/user-attachments/assets/0a8ce875-b79a-4b97-a4b4-ff8ad3ee22d2">
+
+- #### Notice that other record will be successfully inserted
+
+<img width="1015" alt="Screenshot 2024-10-19 at 19 24 07" src="https://github.com/user-attachments/assets/edc3fb73-44c8-4872-8193-211cf4a39092">
+
+## 4. Create the AMI (Amazon Machine Image) for Launch Template
+- #### Select the Instance (“AWS_EC2_PHP_Project1) & Go to the “Actions>Image and templates>Create image”
+
+![Screenshot 2024-10-19 at 19 27 54](https://github.com/user-attachments/assets/49943605-aa63-453a-bfad-4ff93b8b99a7)
+
+<img width="1737" alt="Screenshot 2024-10-19 at 19 29 40" src="https://github.com/user-attachments/assets/36afe65e-9287-40ac-a01a-07404b94fadf">
+
+## 5. Create the Launch Template for Auto Scaling Groups
+- #### Go to the “Launch Template” and Create launch template:
+   - Launch template name — AWS_EC2_PHP_Project_Template
+   - Template version description — AWS_EC2_PHP_Project_Template
+- #### Enable the option “Provide guidance to help me set up a template that  can use with EC2 Auto Scaling” by clicking in the “Auto Scaling guidance” option.
+- #### In the “Application and OS Images (Amazon Machine Image)- required”, choose the “My AMI” option. Select our created AMI here
+
+<img width="1275" alt="Screenshot 2024-10-19 at 19 46 55" src="https://github.com/user-attachments/assets/bbf168c5-8571-4513-b6e1-7152eddd95fc">
+
+<img width="1597" alt="Screenshot 2024-10-19 at 19 51 03" src="https://github.com/user-attachments/assets/069c4ff0-1757-415a-aceb-2ee7a0ffc10d">
+
+## 6. Create an Auto Scaling Group for this PHP website
+- #### Go to the left side & click on the “Auto Scaling Groups” in the “Auto Scaling”. Click on the “Create Auto Scaling group”.
+- #### Choose the “Auto Scaling group name” as “AWS_EC2_PHP_Project_ASG”.
+- #### Choose the “Launch Template” as “AWS_EC2_PHP_Project_Template”. All the “launch template” configuration will be automatically fetched
+
+<img width="1260" alt="Screenshot 2024-10-19 at 19 52 09" src="https://github.com/user-attachments/assets/f1889d58-e2c8-493b-8aba-2acdd2e018ed">
+
+- #### In the “group size” choose the following metrics:
+  - Desired capacity — 2
+  - Minimum capacity — 1
+  - Maximum capacity — 3
+<img width="1146" alt="Screenshot 2024-10-19 at 20 02 44" src="https://github.com/user-attachments/assets/6f159126-616f-4b54-a570-52a4238056db">
+
+- #### I“Auto Scaling Group” will be created successfully.
+  
+  <img width="1468" alt="Screenshot 2024-10-19 at 20 04 16" src="https://github.com/user-attachments/assets/3d8b770d-c446-449e-a478-3b5893dad648">
+  
+- #### Notice that your Auto Scaling Group Instances are successfully running.
+  
+![Screenshot 2024-10-19 at 20 05 26](https://github.com/user-attachments/assets/c2ef524d-263b-490c-8712-2cba72940b45)
+
+## 7. Create a Target Group for Load Balancer
+- #### In the left side, scroll down. Click on the “Target Groups” in the “Load Balancing”.
+- #### Create target group, choose the “instances” as “Choose a target type”.
+- #### Choose the “Target Group Name” as the “EC2-Project-Target-Group”. Leave the other settings as by default
+
+<img width="1227" alt="Screenshot 2024-10-19 at 20 06 22" src="https://github.com/user-attachments/assets/f3d7ccf1-524f-428f-a1c3-34f32a43633a">
+<img width="1735" alt="Screenshot 2024-10-19 at 20 08 42" src="https://github.com/user-attachments/assets/ad9f8893-404c-4e3e-bf99-85349586b317">
+
+## 8. Create a Load Balancer for Balancing the Traffic
+- #### Create Application load balancer
+- #### In the “Basic Configuration”, choose the “Load balancer name” as the “AWS-EC2-PHP-Project-LB”. While leave the “scheme address” as the “Internet-facing” & the “IP address type” as “IPv4”
+<img width="1193" alt="Screenshot 2024-10-19 at 20 09 52" src="https://github.com/user-attachments/assets/1e676180-058a-475b-a85f-3463d8865904">
+
+- #### Notice that the “Load Balancer” will be successfully created & it will be in the “Active” state
+
+<img width="1729" alt="Screenshot 2024-10-19 at 20 12 36" src="https://github.com/user-attachments/assets/e107bd1c-ee09-4392-aa1b-970cb9948e3e">
+
+## 9. Attach the Load Balancer to Auto Scaling Group
+
+<img width="1220" alt="Screenshot 2024-10-19 at 20 14 20" src="https://github.com/user-attachments/assets/a8085402-c0e8-4b1f-97ae-2c7205b3bb3b">
+
+<img width="1688" alt="Screenshot 2024-10-19 at 20 15 47" src="https://github.com/user-attachments/assets/4e4dfc0c-ba44-4210-bcb9-f937cc6d9da8">
+
+## 10. Test the Load Balancer Will Working Fine
+
+- #### Copy the “DNS Name of AWS-EC2-PHP_Project-LB
+- #### Paste the “DNS Name” into the “Browser Address Bar”. 
+
+<img width="1677" alt="Screenshot 2024-10-19 at 20 15 58" src="https://github.com/user-attachments/assets/8c286bc9-cc5d-484c-9aef-22d17f756218">
+
+## 11. Route Traffic from Load Balancer to A Specific Domain
+
+- #### Go to the “Services” section & search the “Route 53”. Click on the “Hosted Zones”.
+- #### Create record
+- Enable the “Alias” option. Choose the following options here:
+  - Choose endpoint: — Alias to Application and Classic Load Balancer
+  - Choose Region: — < You Region > 
+  - Choose load balancer: — < You LB  >
+  
+<img width="1217" alt="Screenshot 2024-10-19 at 21 46 15" src="https://github.com/user-attachments/assets/c4ce1a93-2d93-42ea-a424-461832532a40">
+<img width="1608" alt="Screenshot 2024-10-19 at 22 21 09" src="https://github.com/user-attachments/assets/a1277ad6-3f59-452e-b45d-9ea6b77386bb">
+
+- #### Notice that same PHP website will be visible on the registered domain (ikostyrenko.site).
 
 
+<img width="1475" alt="Screenshot 2024-10-19 at 22 31 49" src="https://github.com/user-attachments/assets/6a860524-8b80-4821-9459-8942bbc4fe76">
 
+## 12. Test the Auto Scaling is Working Properly 
+- #### Select both the “asg-autoscaling-grp” Instances & click on the “Instance State”. Terminate the instance by clicking on the Terminate instance.
 
+<img width="1446" alt="Screenshot 2024-10-19 at 22 39 21" src="https://github.com/user-attachments/assets/6f3b219d-1bbb-4056-a3e0-b8c19e8eca3e">
 
+- #### Wait for some time & refresh the instances. We will notice that the two new instances (asg-autoscaling-grp) is successfully created & in the “Running” state.
 
+<img width="1456" alt="Screenshot 2024-10-19 at 22 43 16" src="https://github.com/user-attachments/assets/8c352088-71e8-4ed5-8645-8888deb1f1fc">
 
+- #### Go to the “Activity” fo ASG  and notice that instance has been successfully terminated & again created.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="1321" alt="Screenshot 2024-10-19 at 22 43 36" src="https://github.com/user-attachments/assets/03259dcc-0071-48e4-b0db-0120ab7518fd">
 
 
 
