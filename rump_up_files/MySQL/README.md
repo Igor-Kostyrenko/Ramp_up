@@ -1,4 +1,4 @@
-## Deploy a Multi-Tier PHP Website Using the AWS EC2 & RDS Services
+![Screenshot 2024-10-20 at 10 41 07](https://github.com/user-attachments/assets/ebf7d263-c198-4d5c-9861-24f138db1495)## Deploy a Multi-Tier PHP Website Using the AWS EC2 & RDS Services
 
 ## Steps to Solve:
 
@@ -218,10 +218,38 @@ servername = “Real Database Endpoint" (example  - application-database.calupg2
 
 <img width="1321" alt="Screenshot 2024-10-19 at 22 43 36" src="https://github.com/user-attachments/assets/03259dcc-0071-48e4-b0db-0120ab7518fd">
 
+## 13. Test the Database is Working Properly
+### Fill the following entries in the name:
+  - Name — Google
+  - Email — support@google.com
 
+##### Click on the “Submit”.
 
+<img width="1135" alt="Screenshot 2024-10-19 at 22 56 04" src="https://github.com/user-attachments/assets/99e399ff-ca0a-45b1-b1d7-9fb1804eafa7">
 
+- #### Go to the “EC2” Machine, connect the machine with the database & go to the “intel” database
 
+<img width="941" alt="Screenshot 2024-10-19 at 22 57 15" src="https://github.com/user-attachments/assets/72d78974-05c1-4579-ad9a-e8fe6498f57e">
 
+## 13. Use Amazaon Secret Manager to store credential
 
+- #### Go to the ASM and create Secrets for RDS database 
 
+![Screenshot 2024-10-20 at 10 41 07](https://github.com/user-attachments/assets/f3dda690-d960-4551-b6b7-af9955b03e31)
+
+- #### Installing the AWS SDK for PHP
+```bash
+ curl -sS https://getcomposer.org/installer | php
+ sudo mv composer.phar /usr/local/bin/composer
+ curl -sS https://getcomposer.org/installer | php
+ sudo mv composer.phar /usr/local/bin/composer
+```
+
+- #### Updating PHP code to use Secrets Manager
+- 
+```bash
+ curl -sS https://getcomposer.org/installer | php
+ sudo mv composer.phar /usr/local/bin/composer
+ curl -sS https://getcomposer.org/installer | php
+ sudo mv composer.phar /usr/local/bin/composer
+```
