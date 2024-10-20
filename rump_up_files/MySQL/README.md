@@ -246,7 +246,8 @@ servername = “Real Database Endpoint" (example  - application-database.calupg2
 ```
 
 - #### Updating PHP code to use Secrets Manager
-- 
+#### paste the “index with ASM.php”  to file `index.php` in `/var/www/html`
+  
 ```bash
  curl -sS https://getcomposer.org/installer | php
  sudo mv composer.phar /usr/local/bin/composer
