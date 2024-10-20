@@ -402,3 +402,4 @@ fi
 ![Screenshot 2024-10-20 at 14 35 13](https://github.com/user-attachments/assets/5339084e-40fa-44e2-bda7-df15f9bbb804)
 
   
+### [SOURCE](https://medium.com/devops-guides/aws-capstone-project-1-how-to-deploy-a-multi-tier-php-website-using-the-aws-ec2-mysql-rds-e8e837f56bab)
