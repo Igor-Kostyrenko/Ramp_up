@@ -249,8 +249,78 @@ servername = “Real Database Endpoint" (example  - application-database.calupg2
 #### paste the “index with ASM.php”  to file `index.php` in `/var/www/html`
   
 ```bash
- curl -sS https://getcomposer.org/installer | php
- sudo mv composer.phar /usr/local/bin/composer
- curl -sS https://getcomposer.org/installer | php
- sudo mv composer.phar /usr/local/bin/composer
+ // Enable autoload via Composer
+    require 'vendor/autoload.php';
+
+    use Aws\SecretsManager\SecretsManagerClient;
+    use Aws\Exception\AwsException;
+
+    // Configuring the AWS Secrets Manager client
+    $client = new SecretsManagerClient([
+        'version' => 'latest',
+        'region' => 'eu-north-1', // Замените на ваш регион AWS
+    ]);
+
+    $secretName = "myDatabaseSecret"; // Имя вашего секрета в AWS Secrets Manager
+
+    try {
+        // Getting the secret value
+        $result = $client->getSecretValue([
+            'SecretId' => $secretName,
+        ]);
+
+        if (isset($result['SecretString'])) {
+            $secret = $result['SecretString'];
+        } else {
+            $secret = base64_decode($result['SecretBinary']);
+        }
+
+        $secretArray = json_decode($secret, true);
+
+        // Getting data for connecting to the database from the secret
+        $servername = $secretArray['host'];
+        $username = $secretArray['username'];
+        $password = $secretArray['password'];
+        $db = $secretArray['dbname'];
+
+    } catch (AwsException $e) {
+        echo "Error retrieving secret: " . $e->getAwsErrorMessage();
+        exit();
+    }
+
+    // Creating a connection to a MySQL database
+    $conn = new mysqli($servername, $username, $password, $db);
+
+    // Checking the connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_POST['firstname']) && isset($_POST['email'])) {
+        $firstname = $conn->real_escape_string($_POST['firstname']);
+        $email = $conn->real_escape_string($_POST['email']);
+
+        $sql = "INSERT INTO data (firstname, email) VALUES ('$firstname', '$email')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<div class='alert alert-success'>New record created successfully</div>";
+        } else {
+            echo "<div class='alert alert-danger'>Error: " . $sql . "<br>" . $conn->error . "</div>";
+        }
+    }
+
+    // Closing the database connection
+    $conn->close();
+    ?>
+</body>
+</html>
+
 ```
+- #### Test the Database is Working Properly
+- 
+<img width="1492" alt="Screenshot 2024-10-20 at 11 09 42" src="https://github.com/user-attachments/assets/09be7da3-88f5-4f52-b138-3057219fb55b">
+
+<img width="1015" alt="Screenshot 2024-10-20 at 11 09 57" src="https://github.com/user-attachments/assets/105cd5d1-e666-43ae-b04c-f760a13acdf7">
+
+<img width="1005" alt="Screenshot 2024-10-20 at 11 11 36" src="https://github.com/user-attachments/assets/f1aeba72-df0f-4237-aa4d-8617175849f1">
+
