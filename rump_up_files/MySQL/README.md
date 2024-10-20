@@ -1,4 +1,4 @@
-![Screenshot 2024-10-20 at 10 41 07](https://github.com/user-attachments/assets/ebf7d263-c198-4d5c-9861-24f138db1495)## Deploy a Multi-Tier PHP Website Using the AWS EC2 & RDS Services
+## Deploy a Multi-Tier PHP Website Using the AWS EC2 & RDS Services
 
 ## Steps to Solve:
 
@@ -233,7 +233,9 @@ servername = “Real Database Endpoint" (example  - application-database.calupg2
 
 ## 13. Use Amazaon Secret Manager to store credential
 
-- #### Go to the ASM and create Secrets for RDS database 
+- #### Go to the ASM and create Secrets for RDS database
+
+![Screenshot 2024-10-20 at 10 41 07](https://github.com/user-attachments/assets/ebf7d263-c198-4d5c-9861-24f138db1495)
 
 ![Screenshot 2024-10-20 at 10 41 07](https://github.com/user-attachments/assets/f3dda690-d960-4551-b6b7-af9955b03e31)
 
