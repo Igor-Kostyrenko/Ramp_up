@@ -319,10 +319,86 @@ servername = “Real Database Endpoint" (example  - application-database.calupg2
 
 ```
 - #### Test the Database is Working Properly
-- 
+
 <img width="1492" alt="Screenshot 2024-10-20 at 11 09 42" src="https://github.com/user-attachments/assets/09be7da3-88f5-4f52-b138-3057219fb55b">
 
 <img width="1015" alt="Screenshot 2024-10-20 at 11 09 57" src="https://github.com/user-attachments/assets/105cd5d1-e666-43ae-b04c-f760a13acdf7">
 
 <img width="1005" alt="Screenshot 2024-10-20 at 11 11 36" src="https://github.com/user-attachments/assets/f1aeba72-df0f-4237-aa4d-8617175849f1">
 
+## 14. Backup MySQL Databases to Amazon S3
+
+- #### Create S3 bucket
+
+![Screenshot 2024-10-20 at 13 46 44](https://github.com/user-attachments/assets/6087fe07-719b-4f59-82ab-84f341b02557)
+
+![Screenshot 2024-10-20 at 13 46 56](https://github.com/user-attachments/assets/91b9e8a8-9ab8-446c-bffe-d1637223343e)
+
+- #### Create or configure an IAM role for your EC2 instance to access S3 and Secrets Manager
+
+![Screenshot 2024-10-20 at 14 11 29](https://github.com/user-attachments/assets/682ee4e2-0885-4bc8-a111-890ef6d8809e)
+
+- #### Create bash script for database backup `backup_db_to_s3.sh`:
+```bash
+ #!/bin/bash
+
+# Secret name in AWS Secrets Manager
+SECRET_NAME="myDatabaseSecret"
+REGION="eu-north-1"
+
+# Date to create a unique backup name
+BACKUP_DATE=$(date +'%Y-%m-%d')
+
+# Path to temporarily save the database dump
+BACKUP_PATH="/tmp/db_backup_$BACKUP_DATE.sql"
+
+# Name S3
+S3_BUCKET="your-s3-bucket-name"
+S3_PATH="s3://$S3_BUCKET/mysql_backups/db_backup_$BACKUP_DATE.sql"
+
+# Get secrets from AWS Secrets Manager
+SECRET=$(aws secretsmanager get-secret-value --secret-id $SECRET_NAME --region $REGION --query SecretString --output text)
+
+# Extracting credentials from the secret
+DB_HOST=$(echo $SECRET | jq -r .host)
+DB_USERNAME=$(echo $SECRET | jq -r .username)
+DB_PASSWORD=$(echo $SECRET | jq -r .password)
+DB_NAME=$(echo $SECRET | jq -r .dbname)
+
+# Dump the database using mysqldump
+mysqldump -h $DB_HOST -u $DB_USERNAME -p$DB_PASSWORD $DB_NAME > $BACKUP_PATH
+
+# Check if the dump was successful
+if [ $? -eq 0 ]; then
+    echo "Backup created successfully: $BACKUP_PATH"
+    
+    # Upload the dump to S3
+    aws s3 cp $BACKUP_PATH $S3_PATH
+    
+    if [ $? -eq 0 ]; then
+        echo "Backup uploaded to S3: $S3_PATH"
+        
+        # Delete the temporary file
+        rm $BACKUP_PATH
+    else
+        echo "Failed to upload backup to S3"
+    fi
+else
+    echo "Failed to create database backup"
+fi
+```
+
+- #### Test the script
+```bash
+  chmod +x backup_db_to_s3.sh 
+  ./backup_db_to_s3.sh
+```
+##### should be installed aws cli
+
+<img width="1527" alt="Screenshot 2024-10-20 at 14 34 58" src="https://github.com/user-attachments/assets/1ba8dac0-38be-4cd2-aa3e-188381785765">
+
+
+- #### Notice that еhe backup was successfully copied to S3
+![Screenshot 2024-10-20 at 14 35 13](https://github.com/user-attachments/assets/5339084e-40fa-44e2-bda7-df15f9bbb804)
+
+  
